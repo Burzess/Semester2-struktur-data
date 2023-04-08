@@ -70,7 +70,7 @@ func Delete(g *entities.GerbongDsn, nip string) {
 func GetList(g *entities.GerbongDsn) {
 	// Inisialisasi tabel dan header kolom
 	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"NPM", "Nama"})
+	table.SetHeader([]string{"NIP", "Nama"})
 
 	// Iterasi melalui setiap elemen GerbongMhs dan menambahkan data ke dalam tabel
 	current := g
