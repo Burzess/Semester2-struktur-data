@@ -51,10 +51,10 @@ func main() {
 				case 5:
 					dosenview.MenuViewByNip(&dataDsn)
 				default:
+					if input == 6 {
+						continue
+					}
 					fmt.Println("pilihan tidak valid")
-				}
-				if input == 6 {
-					continue
 				}
 			}
 		case 2:
