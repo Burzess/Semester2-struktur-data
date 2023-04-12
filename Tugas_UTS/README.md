@@ -9,8 +9,10 @@ Berikut Merupakan Data Struc
 
 - Spesialis
 # Suster
+- MEMBER
 - shift
 - jam kerja
 - Tanggungan
 # Pasien
+- MEMBER
 - Penyakit
