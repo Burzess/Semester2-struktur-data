@@ -6,13 +6,13 @@ Berikut Merupakan Data Struc
 # Dokter
 - MEMBER
 - jam kerja
-
 - Spesialis
 # Suster
 - MEMBER
 - shift
-- jam kerja
 - Tanggungan
 # Pasien
 - MEMBER
-- Penyakit
+- Riwayat_Medis
+- Daftar_Obat
+- Kondisi_Medis
