@@ -6,7 +6,7 @@ Berikut Merupakan Data Struc
 # Dokter
 - MEMBER
 - jam kerja
-- shift
+
 - Spesialis
 # Suster
 - shift
