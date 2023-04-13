@@ -1,23 +1,27 @@
 package entities
 
-type Dosen struct {
-	Nip  string
-	Nama string
+type Dokter struct {
+	ID        int
+	Nama      string
+	Tlp       string
+	JamKerja  string
+	Spesialis string
 }
-
-type GerbongDsn struct {
-	Dosen Dosen
-	Next  *GerbongDsn
+type Suster struct {
+	ID    int
+	Nama  string
+	Tlp   string
+	Shift string
+	Tugas string
 }
-
-type Mahasiswa struct {
-	Jurusan string
-	Npm     string
+type Medis struct {
+	Tanggal string
+	Peyakit string
+}
+type Pasien struct {
+	ID      int
 	Nama    string
-	Ipk     float64
-}
-
-type GerbongMhs struct {
-	Mahasiswa Mahasiswa
-	Next      *GerbongMhs
+	Tlp     string
+	Kondisi Medis
+	Riwayat Medis
 }

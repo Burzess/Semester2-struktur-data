@@ -3,9 +3,10 @@ package views
 import "fmt"
 
 func MenuUtama() {
-	fmt.Println("1. Dosen")
-	fmt.Println("2. Mahasiswa")
-	fmt.Println("3. Exit")
+	fmt.Println("1. Dokter")
+	fmt.Println("2. Suster")
+	fmt.Println("3. Pasien")
+	fmt.Println("4. Exit")
 	fmt.Print("masukan pilihan menu : ")
 }
 
