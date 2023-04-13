@@ -1,0 +1,38 @@
+
+func GetListMahasiswa(g *entities.GerbongMhs) {
+	// Inisialisasi tabel dan header kolom
+	table := tablewriter.NewWriter(os.Stdout)
+	table.SetHeader([]string{"Jurusan", "NPM", "Nama", "IPK"})
+
+	// Iterasi melalui setiap elemen GerbongMhs dan menambahkan data ke dalam tabel
+	current := g
+	for current.Next != nil {
+		mhs := current.Next.Mahasiswa
+		row := []string{mhs.Jurusan, mhs.Npm, mhs.Nama, fmt.Sprintf("%.2f", mhs.Ipk)}
+		table.Append(row)
+		current = current.Next
+	}
+
+	// Render tabel ke terminal
+	table.Render()
+}
+
+func GetlistMahasiswaByNpm(g *entities.GerbongMhs, npm string) {
+	current := g
+
+	for current.Next != nil {
+		if current.Next.Mahasiswa.Npm == npm {
+			mhs := current.Next.Mahasiswa
+			// Inisialisasi tabel dan header kolom
+			table := tablewriter.NewWriter(os.Stdout)
+			table.SetHeader([]string{"Jurusan", "NPM", "Nama", "IPK"})
+			row := []string{mhs.Jurusan, mhs.Npm, mhs.Nama, fmt.Sprintf("%.2f", mhs.Ipk)}
+			table.Append(row)
+			// Render tabel ke terminal
+			table.Render()
+			return
+		}
+		current = current.Next
+	}
+	fmt.Printf("data dengan NPM %s tidak ada\n", npm)
+}
