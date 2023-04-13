@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"tugas-uts/views"
+	"tugas-uts/Tugas_UTS/views"
 )
 
 func clear() {
@@ -20,7 +20,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	var menuUtama int = 0
 
-	for menuUtama != 3 { // jika pilihan menuUtama == 3 maka keluar dari program
+	for menuUtama != 4 {
 		clear()
 		views.MenuUtama()
 		fmt.Scan(&menuUtama)
@@ -30,21 +30,21 @@ func main() {
 		case 1:
 			var input int = 0
 			clear()
-			for input != 6 { // jika pilihan input == 6 maka kembali ke menu utama
+			for input != 6 {
 				views.SubMenu()
 				fmt.Scan(&input)
 
 				switch input {
 				case 1:
-
+					fmt.Println("MENU INSERT")
 				case 2:
-
+					fmt.Println("MENU UPDATE")
 				case 3:
-
+					fmt.Println("MENU DELETE")
 				case 4:
-
+					fmt.Println("MENU VIEW ALL")
 				case 5:
-
+					fmt.Println("MENU VIEW BY ID")
 				default:
 					if input == 6 {
 						continue
@@ -62,15 +62,15 @@ func main() {
 
 				switch input {
 				case 1:
-
+					fmt.Println("MENU INSERT")
 				case 2:
-
+					fmt.Println("MENU UPDATE")
 				case 3:
-
+					fmt.Println("MENU DELETE")
 				case 4:
-
+					fmt.Println("MENU VIEW ALL")
 				case 5:
-
+					fmt.Println("MENU VIEW BY ID")
 				default:
 					if input == 6 {
 						continue
@@ -88,15 +88,15 @@ func main() {
 
 				switch input {
 				case 1:
-
+					fmt.Println("MENU INSERT")
 				case 2:
-
+					fmt.Println("MENU UPDATE")
 				case 3:
-
+					fmt.Println("MENU DELETE")
 				case 4:
-
+					fmt.Println("MENU VIEW ALL")
 				case 5:
-
+					fmt.Println("MENU VIEW BY ID")
 				default:
 					if input == 6 {
 						continue
