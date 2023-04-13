@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"tugas-uts/Tugas_UTS/entities"
-	"tugas-uts/Tugas_UTS/views"
-	"tugas-uts/Tugas_UTS/views/dokterview"
+	"tugas-uts/entities"
+	"tugas-uts/views"
+	"tugas-uts/views/dokterview"
 )
 
 func clear() {
