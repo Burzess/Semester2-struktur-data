@@ -1,7 +1,8 @@
 package doktercontrollers
 
 import (
-	"tugas-uts/Tugas_UTS/doktermodel"
+	"tugas-uts/doktermodel"
+	"tugas-uts/entities"
 )
 
 func InsertDokter(dataDokter *entities.Dokter, id int, nama string, Tlp string, jamKerja string, spesialis string) {

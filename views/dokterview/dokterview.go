@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"tugas-uts/entities"
 )
 
 func MenuInsert(dataDokter *entities.Dokter) {
