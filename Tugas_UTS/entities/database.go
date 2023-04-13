@@ -6,6 +6,7 @@ type Dokter struct {
 	Tlp       string
 	JamKerja  string
 	Spesialis string
+	Next      *Dokter
 }
 type Suster struct {
 	ID    int
@@ -13,6 +14,7 @@ type Suster struct {
 	Tlp   string
 	Shift string
 	Tugas string
+	Next  *Suster
 }
 type Medis struct {
 	Tanggal string
@@ -24,4 +26,5 @@ type Pasien struct {
 	Tlp     string
 	Kondisi Medis
 	Riwayat Medis
+	Next    *Pasien
 }
