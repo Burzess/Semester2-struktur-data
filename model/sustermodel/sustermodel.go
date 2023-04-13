@@ -1,4 +1,4 @@
-package suster
+package sustermodel
 
 import (
 	"fmt"
