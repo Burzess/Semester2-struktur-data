@@ -1,0 +1,4 @@
+login: petugas loket / administrator
+
+-petugas loket (push, pop->view by no antrian, view all antrian)
+-administrator (insert, update, delete, view by id, view all)
