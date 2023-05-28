@@ -81,3 +81,22 @@ func PilihDokter(pilih int) string {
 	}
 	return dokter
 }
+
+func DataStatisDokter() {
+	dokter1 := entity.Dokter{
+		Id:        1,
+		Nama:      "Halim",
+		Tlp:       "0812345678",
+		JamKerja:  "08:00-15:00",
+		Spesialis: "Dokter Umum",
+	}
+	ModelInsertDokter(dokter1)
+	dokter2 := entity.Dokter{
+		Id:        2,
+		Nama:      "Alif",
+		Tlp:       "0812345678",
+		JamKerja:  "08:00-15:00",
+		Spesialis: "Dokter Umum",
+	}
+	ModelInsertDokter(dokter2)
+}

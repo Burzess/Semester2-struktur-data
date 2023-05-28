@@ -1,4 +1,4 @@
-package view
+package pasienview
 
 import (
 	"fmt"
@@ -8,10 +8,14 @@ import (
 func InsertPasien() {
 	var id int
 	var nama, tlp, penyakit string
-	fmt.Print("masukkan ID Baru : ")
+	fmt.Print("masukkan ID : ")
 	fmt.Scan(&id)
-	fmt.Print("masukkan Nama Baru : ")
+	fmt.Print("masukkan Nama : ")
 	fmt.Scan(&nama)
+	fmt.Print("masukan Penyakit yang di derita: ")
+	fmt.Scan(&penyakit)
+	fmt.Println("masukan nomor telpon: ")
+	fmt.Scan(&tlp)
 
 	err := controller.ControllerInsertPasien(id, nama, tlp, penyakit)
 	if err != nil {
@@ -21,13 +25,18 @@ func InsertPasien() {
 	}
 }
 
-func UpdateDoter() {
+func UpdatePasien() {
 	var id int
 	var nama, tlp, penyakit string
 	fmt.Print("masukkan ID : ")
 	fmt.Scan(&id)
 	fmt.Print("masukkan Nama Baru : ")
 	fmt.Scan(&nama)
+	fmt.Print("masukan Penyakit yang di derita: ")
+	fmt.Scan(&penyakit)
+	fmt.Println("masukan nomor telpon: ")
+	fmt.Scan(&tlp)
+
 	err := controller.ControllerUpdate(id, nama, tlp, penyakit)
 	if err != nil {
 		fmt.Println(err)
@@ -36,7 +45,7 @@ func UpdateDoter() {
 	}
 }
 
-func DeleteDoter() {
+func DeletePasien() {
 	var id int
 	fmt.Println("masukan ID")
 	fmt.Scan(&id)
@@ -54,8 +63,8 @@ func ViewById() {
 	fmt.Scan(&id)
 	current := controller.ControllerViewById(id)
 	if current != nil {
-		fmt.Println(current.Next.Data.Id)
-		fmt.Println(current.Next.Data.Nama)
+		fmt.Println("Id: ", current.Data.Id)
+		fmt.Println("Nama: ", current.Data.Nama)
 	} else {
 		fmt.Println("data tidak di temukan")
 	}
@@ -63,9 +72,10 @@ func ViewById() {
 
 func ViewPasien() {
 	allPasien := controller.ControllerFindAllPasien()
-	// fmt.Println(allPasien)
 	for _, member := range allPasien {
-		fmt.Println("id Pasien :", member.Id)
-		fmt.Println("Nama Pasien :", member.Nama)
+		fmt.Println("id Pasien   : ", member.Id)
+		fmt.Println("Nama Pasien : ", member.Nama)
+		fmt.Println("Penyakit    : ", member.Penyakit)
+		fmt.Println("Telpon      : ", member.Telpon)
 	}
 }

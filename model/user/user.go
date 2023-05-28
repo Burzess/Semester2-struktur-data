@@ -19,7 +19,7 @@ func CreateAccount(newData entity.User) {
 	}
 }
 
-func DataStatis() {
+func DataStatisUser() {
 	administrator := entity.User{
 		Username: "halim",
 		Password: "halim123",

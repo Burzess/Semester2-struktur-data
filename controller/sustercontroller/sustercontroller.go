@@ -6,7 +6,7 @@ import (
 	model "progres/model/suster"
 )
 
-func ControllerInsertSuster(id int, nama, tlp, shift, tugas string) error {
+func ControllerInsertSuster(id int, nama, tlp, shift string) error {
 	find := model.Search(id)
 	if find == nil {
 		data := entities.Suster{
@@ -14,7 +14,6 @@ func ControllerInsertSuster(id int, nama, tlp, shift, tugas string) error {
 			Nama:  nama,
 			Tlp:   tlp,
 			Shift: shift,
-			Tugas: tugas,
 		}
 		model.ModelInsertSuster(data)
 		return nil
@@ -23,13 +22,12 @@ func ControllerInsertSuster(id int, nama, tlp, shift, tugas string) error {
 	return errors.New("insert Data gagal, id yang di inputkan sudah tersedia")
 }
 
-func ControllerUpdate(id int, nama, tlp, shift, tugas string) error {
+func ControllerUpdate(id int, nama, tlp, shift string) error {
 	container := entities.Suster{
 		Id:    id,
 		Nama:  nama,
 		Tlp:   tlp,
 		Shift: shift,
-		Tugas: tugas,
 	}
 
 	if model.ModelUpdateSuster(container) {

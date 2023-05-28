@@ -5,7 +5,6 @@ type Suster struct {
 	Nama  string
 	Tlp   string
 	Shift string
-	Tugas string
 }
 type LinkedlistSuster struct {
 	Data Suster

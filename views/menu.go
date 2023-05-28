@@ -4,7 +4,7 @@ import "fmt"
 
 func MenuAntrian() {
 	fmt.Println()
-	fmt.Println("=== Program Antrian Rumah Sakit ===")
+	fmt.Println("===> Program Antrian Rumah Sakit <===")
 	fmt.Println("1. Ambil Nomor Antrian")
 	fmt.Println("2. Antrian Selanjutnya")
 	fmt.Println("3. Tampilkan Semua Antrian")
@@ -12,6 +12,8 @@ func MenuAntrian() {
 }
 
 func OlahData() {
+	fmt.Println()
+	fmt.Println("===> Program Olah Data Rumah Sakit <===")
 	println("1. Dokter")
 	println("2. Suster")
 	println("3. Pasien")

@@ -1,4 +1,4 @@
-package view
+package susterview
 
 import (
 	"fmt"
@@ -7,13 +7,17 @@ import (
 
 func InsertSuster() {
 	var id int
-	var nama, tlp, shift, tugas string
+	var nama, tlp, shift string
 	fmt.Print("masukkan ID Baru : ")
 	fmt.Scan(&id)
 	fmt.Print("masukkan Nama Baru : ")
 	fmt.Scan(&nama)
+	fmt.Print("masukan nomor telpon : ")
+	fmt.Scan(&tlp)
+	fmt.Print("masukan shift : ")
+	fmt.Scan(&shift)
 
-	err := controller.ControllerInsertSuster(id, nama, tlp, shift, tugas)
+	err := controller.ControllerInsertSuster(id, nama, tlp, shift)
 	if err != nil {
 		fmt.Println(err)
 	} else {
@@ -21,14 +25,14 @@ func InsertSuster() {
 	}
 }
 
-func UpdateDoter() {
+func UpdateSuster() {
 	var id int
-	var nama, tlp, shift, tugas string
+	var nama, tlp, shift string
 	fmt.Print("masukkan ID : ")
 	fmt.Scan(&id)
 	fmt.Print("masukkan Nama Baru : ")
 	fmt.Scan(&nama)
-	err := controller.ControllerUpdate(id, nama, tlp, shift, tugas)
+	err := controller.ControllerUpdate(id, nama, tlp, shift)
 	if err != nil {
 		fmt.Println(err)
 	} else {
@@ -54,8 +58,8 @@ func ViewById() {
 	fmt.Scan(&id)
 	current := controller.ControllerViewById(id)
 	if current != nil {
-		fmt.Println(current.Next.Data.Id)
-		fmt.Println(current.Next.Data.Nama)
+		fmt.Println("Id: ", current.Data.Id)
+		fmt.Println("Nama: ", current.Data.Nama)
 	} else {
 		fmt.Println("data tidak di temukan")
 	}

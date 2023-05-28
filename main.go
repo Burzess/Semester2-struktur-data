@@ -5,10 +5,13 @@ import (
 	"os"
 	"os/exec"
 	"progres/controller/usercontroller"
-	model "progres/model/user"
+	"progres/model/dokter"
+	"progres/model/user"
 	"progres/views"
 	"progres/views/antrianview"
-	dokter "progres/views/dokterview"
+	"progres/views/dokterview"
+	"progres/views/pasienview"
+	"progres/views/susterview"
 	"runtime"
 )
 
@@ -26,7 +29,8 @@ func Clear() {
 }
 
 func main() {
-	model.DataStatis()
+	user.DataStatisUser()
+	dokter.DataStatisDokter()
 	var username, password string
 	var pilih int
 	for pilih != 2 {
@@ -60,7 +64,7 @@ func main() {
 							switch pilih {
 							case 1:
 								Clear()
-								dokter.InsertDokter()
+								dokterview.InsertDokter()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -68,7 +72,7 @@ func main() {
 								}
 							case 2:
 								Clear()
-								dokter.UpdateDoter()
+								dokterview.UpdateDoter()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -76,7 +80,7 @@ func main() {
 								}
 							case 3:
 								Clear()
-								dokter.DeleteDoter()
+								dokterview.DeleteDoter()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -84,7 +88,7 @@ func main() {
 								}
 							case 4:
 								Clear()
-								dokter.ViewById()
+								dokterview.ViewById()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -92,7 +96,7 @@ func main() {
 								}
 							case 5:
 								Clear()
-								dokter.ViewDokter()
+								dokterview.ViewDokter()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -114,7 +118,7 @@ func main() {
 							switch pilih {
 							case 1:
 								Clear()
-								//dokter.InsertDokter()
+								susterview.InsertSuster()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -122,7 +126,7 @@ func main() {
 								}
 							case 2:
 								Clear()
-								//dokter.UpdateDoter()
+								susterview.UpdateSuster()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -130,7 +134,7 @@ func main() {
 								}
 							case 3:
 								Clear()
-								//dokter.DeleteDoter()
+								susterview.DeleteDoter()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -138,7 +142,7 @@ func main() {
 								}
 							case 4:
 								Clear()
-								//dokter.ViewById()
+								susterview.ViewById()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -146,7 +150,7 @@ func main() {
 								}
 							case 5:
 								Clear()
-								//dokter.ViewDokter()
+								susterview.ViewSuster()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -168,7 +172,7 @@ func main() {
 							switch pilih {
 							case 1:
 								Clear()
-								//dokter.InsertDokter()
+								pasienview.InsertPasien()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -176,7 +180,7 @@ func main() {
 								}
 							case 2:
 								Clear()
-								//dokter.UpdateDoter()
+								pasienview.UpdatePasien()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -184,7 +188,7 @@ func main() {
 								}
 							case 3:
 								Clear()
-								//dokter.DeleteDoter()
+								pasienview.DeletePasien()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -192,7 +196,7 @@ func main() {
 								}
 							case 4:
 								Clear()
-								//dokter.ViewById()
+								pasienview.ViewById()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
@@ -200,7 +204,7 @@ func main() {
 								}
 							case 5:
 								Clear()
-								//dokter.ViewDokter()
+								pasienview.ViewPasien()
 								fmt.Print("kembali (y/t): ")
 								fmt.Scan(&back)
 								if back == "t" || back == "T" {
